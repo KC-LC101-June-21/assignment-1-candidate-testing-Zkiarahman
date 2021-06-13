@@ -26,28 +26,42 @@ function askForName() {
 }
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
- // console.log(question);
+ 
  
 
-
+let score = 0;
  for (let i = 0; i < questions.length; i++) {
   candidateAnswers = input.question(questions[i]);
    console.log( `your response: ${candidateAnswers}
-   correct response: ${correctAnswers[i]}`);
-  
-   
-   
+correct response: ${correctAnswers[i]}`);
+   if(candidateAnswers.toLowerCase() === correctAnswers.join('|').toLowerCase().split('|')[i]){
+     score++;
+     console.log(`you got that right!`);
+   } else{
+     console.log(`Incorrect`);
    }
  }
 
-function gradeQuiz(candidateAnswers) {
+//  let score = 0;
+    let grade = (score/5 *100)
+    console.log(`Here are your results: You answered ${score} of ${questions.length} questions correct!`);
+     console.log(`your total ${grade} % `); 
+   } 
+// let score = 0;
+    // let grade = (score/5 *100)
+
+   
+//  console.log(`Here are your results: You answered ${score} of ${questions.length} questions correct!`);
+// console.log(`your total ${grade} % `);
+ 
+
+function gradeQuiz(candidateAnswers){
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-
-  let grade;
-  
-
-  return grade;
+let score = 4;
+   let grade = score/question.length*100;
+ return grade;
+ console.log('passed or failed');
 }
 
 function runProgram() {
