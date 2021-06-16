@@ -30,7 +30,13 @@ function askQuestion() {
 
   for (let i = 0; i < questions.length; i++) {
     candidateAnswers.push (input.question(questions[i]));
-
+    console.log(`Correct response: ${correctAnswers[i]}`);
+  if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+      
+      console.log(`\n`);
+    } else {
+         console.log(`Incorrect \n`)
+    }
   }
 }
 
@@ -41,13 +47,14 @@ function gradeQuiz(candidateAnswers) {
    let grade = 0;
    
  for (let i = 0; i < questions.length; i++){
-   console.log(`Correct response: ${correctAnswers[i]}`);
+   
     if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
       grade++;
-      console.log(`\n`);
-    } else {
-      console.log(`Incorrect \n`);
+      
     }
+    // } else {
+    //   console.log(`Incorrect \n`);
+    // }
  }
   if ((grade /5) * 100 >= pass) {
     console.log(`>>> Status: PASSED! <<<`);
